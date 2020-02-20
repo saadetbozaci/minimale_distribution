@@ -7,7 +7,7 @@ It comes with a full-fledged website that requires no further extensions.
 Installation
 ------------
 
-a) Install `minimale_distribution` distribution using the extension manager in the
+a) Install `minimale_distribution` using the extension manager in the
 backend of your TYPO3 installation. Find the distribution in "Get preconfigured distribution".
 
 b) Alternatively, add `minimale_distribution` via composer `composer require typo3/cms-minimale_distribution`
