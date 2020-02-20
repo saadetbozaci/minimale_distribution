@@ -27,7 +27,7 @@ To prepare for a clean data export, the following steps are necessary:
 
 * Install a fresh and empty TYPO3 core, easiest way is to clone current core master
 
-* Install base system, select "Do nothing, just get me to the Backend." in last installer step
+* Install base system, select "Do nothing, just get me to the Backend." 
 
 * Go to extension manager "Get Extensions".
 
