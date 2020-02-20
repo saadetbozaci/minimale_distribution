@@ -1,0 +1,21 @@
+
+###################
+##  Footer Data  ##
+## An object with the content type COA is a cObject, 
+## in which you can place several other cObjects using numbers to enumerate them.
+## except that this block gets included at the bottom of the page 
+## (just before the closing body tag).
+footerData  = COA
+footerData  {
+  10 = TEXT
+  ## TypoScript provides the PHP functions "date" and "strftime"
+  ## This always shows the current year.
+  10.data = date:U
+  10.strftime = %Y
+  ## Adds copyright (©) with |
+  wrap = &copy; &nbsp;|&nbsp
+  20 = TEXT
+  20 {
+    value = &nbsp;{$minimale_distribution.companyname}
+  }
+}

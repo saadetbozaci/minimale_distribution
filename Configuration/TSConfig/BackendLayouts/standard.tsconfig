@@ -1,0 +1,22 @@
+mod.web_layout.BackendLayouts {
+  standard {
+    title = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:BE_Layout-1col-standard
+    icon = EXT:minimale_distribution/Resources/Public/Icons/Backendlayouts/standard_1.png
+    config {
+      backend_layout {
+        colCount = 1
+        rowCount = 1
+        rows {
+          1 {
+            columns {
+              1 {
+                name = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:column-main
+                colPos = 0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

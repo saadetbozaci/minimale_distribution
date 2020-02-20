@@ -1,0 +1,50 @@
+#################
+##  Main Menu  ##
+mainmenu = HMENU
+mainmenu {
+  ## define the first level as text menu
+  1 = TMENU
+  1 {
+    ## There’s another important consideration for multiple-level menus:
+    ## do you want to see all child pages of the current page or also children of the sibling pages?
+    ## Here we want to se also the childen of the sibling pages  
+    ## This behaviour can be toggled on and off with the expAll property.
+    expAll = 1
+    ## The NO command stands for the normal state menu. You must set this to active with NO = 1 
+    ## (this also applies to all other menu states)
+    NO = 1
+    NO {
+      ## function is like the linkWrap attribute
+      ## includes also any submenus in addition to the link of the menu item
+      wrapItemAndSub = <li>|</li>
+      ## 
+      stdWrap.htmlSpecialChars = 1
+      ## specify the title attribute of the a-tag around the menu item.
+      ## This would use the description // subtitle // title field of the a title="" attributes 
+      ATagTitle.field = description // subtitle // title
+    }
+  ## The command ACT stands for an active state, as soon as you are on a page, 
+  ## this page gets your previously defined state in your menu, in this example a class.
+    ACT < .NO
+    ACT.wrapItemAndSub = <li class="act">|</li>
+
+    CUR < .NO
+    CUR.wrapItemAndSub = <li class="cur">|</li>
+  }
+  ## With the command 2 <.1 all configurations that you wrote in the first level (1 = TMENU)
+  ## are inherited to the next lower level (2 = TMENU)
+  2 < .1
+  2.wrap = <ul>|</ul>
+  3 < .2
+}
+
+## The subpart mainmenu outputs the main navigation
+## inherited from mainmenu
+mainmenu-v-level1 < mainmenu
+## You have to adjust the "entryLevel" command depending on your page layout (backend).
+## This command represents the entry level from which the menu should be rendered.
+mainmenu-v-level1.entryLevel = 1
+## but there is a way, which makes our definitions look nicer to the eye: 
+## we define wraps seperately. Like every content object HMENU also provides a property named stdWrap.
+## here: but use another wrap as above 
+mainmenu-v-level1.1.wrap = <ul id="main-menu-v" class="sm sm-vertical sm-{$minimale_distribution.SmartmenuThemes} hidden-sm">|</ul>

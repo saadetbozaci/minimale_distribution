@@ -1,0 +1,29 @@
+##############################
+##  Include indexed_search  ##
+searchfield = USER
+searchfield {
+	userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+	vendorName = TYPO3\CMS
+	extensionName = IndexedSearch
+	pluginName = Pi2
+	switchableControllerActions {
+		Search {
+			1 = form
+			2 = search
+		}
+	}
+	## URIs to Extbase actions now need a valid cHash per default. 
+	## This is required for both cached and uncached actions. 
+	## The behavior can be disabled for all actions using the feature 
+	## requireCHashArgumentForActionArguments switch to false
+	features.requireCHashArgumentForActionArguments = 0
+	## paths of the extensions will be overwritten
+	view =< plugin.tx_indexedsearch.view
+	view.partialRootPaths.10 = EXT:minimale_distribution/Resources/Private/Extensions/Indexed_Search/Partials/
+    view.templateRootPaths.10 = EXT:minimale_distribution/Resources/Private/Extensions/Indexed_Search/Templates/
+	
+	settings =< plugin.tx_indexedsearch.settings
+	## id of the page where the plugin is integrated
+	settings.targetPid = {$minimale_distribution.searchformUid}
+	settings.rootPidList = {$minimale_distribution.rootId}
+}

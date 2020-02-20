@@ -1,0 +1,28 @@
+#################
+##  Meta Menu  ##
+## for the footer 
+metamenu = HMENU
+metamenu {
+  ## special is used instead of entryLevel: This means that it will start to be visible from that level on.
+  special = directory
+  ## starting point ID of the meta menu is assigned
+  special.value = {$minimale_distribution.metamenuUid}
+  stdWrap.wrap = <nav class="inline-block"><ul class="horizontal"> | </ul></nav>
+  1 = TMENU
+  1 {
+    NO {
+      wrapItemAndSub = <li> | </li>
+      stdWrap.htmlSpecialChars = 1
+      ATagTitle.field = description // subtitle // title
+    }
+
+    ACT < .NO
+    ACT = 1
+    ACT.wrapItemAndSub = <li class="act"> | </li>
+    CUR < .NO
+    CUR = 1
+    ## ensures that no link is used that unnecessarily refers to the current page
+    CUR.doNotLinkIt = 1
+    CUR.linkWrap = <span>|</span>
+  }
+}

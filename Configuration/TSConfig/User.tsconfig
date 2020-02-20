@@ -1,0 +1,18 @@
+###################
+##    options    ##
+## Various options for the user affecting the core at various points. ##
+
+## Clear cache for user (allows the cache to be cleared for non-admins)
+## This will allow a user to clear the whole page cache.
+## but only in the pulldown menu in the top right of the page view under "advanced functions"
+options.clearCache.pages = 1
+
+## the titles in the page tree will have their ID numbers printed before the title.
+options.pageTree.showPageIdWithTitle = 1
+
+## button "Duplicate" will appear in TCEFORMs.
+## Note that it is possible to set this for single tables using options.showDuplicate.[tableName].
+## Any value set for a single table will override the default value set for saveDocView.
+options.showDuplicate = 1
+## Or only for tt_content
+# options.showDuplicate.tt_content = 1

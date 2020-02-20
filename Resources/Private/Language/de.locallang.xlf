@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2020-01-20 T22:45:50Z">
+		<header>
+			<generator>locallang_Editor</generator>
+			<authorName>Saadet Bozaci</authorName>
+			<authorEmail>s4saboza@uni-trier.de</authorEmail>
+		</header>
+		<body>
+			<trans-unit id="BE_Layout-1col-standard">
+				<source>Standard: One columnn Layout</source>
+				<target>Standard: Einspaltiges Layout</target>
+			</trans-unit>
+			<trans-unit id="BE_Layout-2col">
+				<source>Two Column Layout</source>
+				<target>Zweispaltiges Layout</target>
+			</trans-unit>
+			<trans-unit id="BE_Layout-3col">
+				<source>Three Column Layout</source>
+				<target>Dreispaltiges Layout</target>
+			</trans-unit>
+			<trans-unit id="BE_Layout-footer">
+				<source>Footer Layout</source>
+				<target>Layout Fusszeile</target>
+			</trans-unit>
+			<trans-unit id="column-above">
+				<source>Top Content 100%</source>
+				<target>obiger Inhaltsbereich 100%</target>
+			</trans-unit>
+			<trans-unit id="column-main">
+				<source>Main Content</source>
+				<target>Hauptinhalt</target>
+			</trans-unit>
+			<trans-unit id="column-below">
+				<source>Bottom Content 100%</source>
+				<target>Inhaltsbereich unten 100%</target>
+			</trans-unit>
+			<trans-unit id="column-left50">
+				<source>Left Content 50%</source>
+				<target>linker Inhaltsbereich 50%</target>
+			</trans-unit>
+			<trans-unit id="column-right50">
+				<source>Right Content 50%</source>
+				<target>rechter Inhaltsbereich 50%</target>
+			</trans-unit>
+			<trans-unit id="column-left33">
+				<source>Left Content 33%</source>
+				<target>linker Inhaltsbereich 33%</target>
+			</trans-unit>
+			<trans-unit id="column-middle33">
+				<source>Middle Content 33%</source>
+				<target>mittlerer Inhaltsbereich 33%</target>
+			</trans-unit>
+			<trans-unit id="column-right33">
+				<source>Right Content 33%</source>
+				<target>rechter Inhaltsbereich 33%</target>
+			</trans-unit>
+			<trans-unit id="Page_h1" approved="yes">
+				<source>h1: Headline 1</source>
+				<target>h1: Überschrift 1</target>
+			</trans-unit>
+			<trans-unit id="Theme_h2" approved="yes">
+				<source>h2: Headline 2</source>
+				<target>h2: Überschrift 2</target>
+			</trans-unit>
+			<trans-unit id="Headline_h3" approved="yes">
+				<source>h3: Headline 3</source>
+				<target>h3: Überschrift 3</target>
+			</trans-unit>
+			<trans-unit id="Headline_h4" approved="yes">
+				<source>h4: Headline 4</source>
+				<target>h4: Überschrift 4</target>
+			</trans-unit>
+			<trans-unit id="Headline_h5" approved="yes">
+				<source>h5: Headline 5</source>
+				<target>h5: Überschrift 5</target>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.companyname" approved="yes">
+				<source>Company Name: Complete legal name of a firm, 
+				used in the copyright Information (in the footer).</source>
+				<target>Firmenname: Vollständiger rechtmäßiger Name einer Firma,
+				der in den Copyright-Informationen verwendet wird (in der Fußzeile).</target>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.compressCss" approved="yes">
+				<source>Compress CSS: Activate compression 
+				to compress or to reduce CSS code siz.</source>
+				<target>Compress CSS: Aktivieren die Komprimierung,
+				um die CSS-Codegröße zu komprimieren bzw. zu reduzieren.</target>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.compressJs" approved="yes">
+				<source>Compress JavaScript: Activate compression
+				to compress or to reduce JavaScript code size.</source>
+				<target>Compress JavaScript: Komprimierung
+				um die JavaScript-Codegröße zu komprimieren bzw. zu reduzieren.</target>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.concatenateCss" approved="yes">
+				<source>Concatenate CSS: Activate concatenation 
+				of multiple CSS files into one single file.</source>
+				<target>Concatenate CSS: Zusammenfassung 
+				mehrerer CSS-Dateien zu einer einzigen Datei.</target>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.concatenateJs" approved="yes">
+				<source>Concatenate JavaScript: Activate concatenation
+				of multiple JavaScript files into one single file.</source>
+				<target>Concatenate JavaScript: Zusammenfassung 
+				mehrerer JavaScript-Dateien zu einer einzigen Datei.</target>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.logoFile" approved="yes">
+				<source>logoFile: Path to an image used as logo in the header of the website
+				is located f.e. under fileadmin/images/logo.jpg, or EXT:myext/Resources/Public/Images/logo.jpg</source>
+				<target>Logo-Datei: Der Pfad zu einem Bild, dass als Logo in der Kopfzeile der Website verwendet wird,
+				befindet sich z.B unter fileadmin / images / logo.jpg oder EXT: ext / Resources / Public / Images / logo.jpg</target>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.favicon">
+				<source>App-/FavIcon quadratic: Path to an image used as Favicon in browsers and as touch icons for
+					smartphones and Tablets. You need 2 variants of this icon to cover all devices, this one has to be quadratic.
+					Note that an appropriately large image must be chosen so that it can be derived for everyone else.</source>
+				<target>App-/Favicon Quadratisch: Pfad zu einer Bilddatei, die als Favicon in Browsern und TouchIcon für
+					Smartphones und Tablets genutzt wird. Sie benötigen 2 Varianten des Bildes, um möglichst viele Geräte
+					abzudecken, dieses Bild muss quadratisch sein. Beachte, dass ein entsprechend großes Bild ausgewählt werden muss,
+					damit es für alle anderen abgeleitet werden kann.</target>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.iconWide">
+				<source>App-/FavIcon Wide: Path to a second wide image used as Favicon in browsers and as touch icons for
+					smartphones and Tablets. This variant need an aspect ratio of 31:15, f.e: width 310px, height 150px 
+					for windows start menu.</source>
+				<target>App-/FavIcon Breit: Pfad zu einer zweiten breiten Bilddatei, die als Favicon in Browsern und TouchIcon für
+					Smartphones und Tablets genutzt wird. Diese Variante benötigt ein Seitenverhältnis von 31:15, z.B.:
+					Breite 310 px, Höhe 150 px für Windows Startmenü.</target>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.showLang">
+				<source>Deactivate language menu: Turn on and off the language menu.</source>
+				<target>Sprachmenü aktivieren: Anzeige des Sprachmenüs ein-/ausschalten.</target>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.menuType">
+				<source>Navigation type: Select the style of the main navigation. Three types of variants are available.</source>
+				<target>Navigationstyp: Wählen Sie den Stil der Hauptnavigation aus. Drei Arten von Varianten stehen zur Verfügung.</target>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.SmartmenuThemes">
+				<source>SmartmenuThemes: For the main SmartmenuThemes there are two different smartmenus.</source>
+				<target>SmartmenuThemes: Für die SmartmenuThemes stehen zwei verschiedene Smartmenus zur Verfügung.</target>
+			</trans-unit>
+		 	<trans-unit id="minimale_distribution.rootId" approved="yes">
+				<source>Root ID: ID of the root page</source>
+				<target>Root ID: ID der Root-Seite</target>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.searchResultUid" approved="yes">
+				<source>Search Result ID: ID of the page for search results</source>
+				<target>Search Result ID: ID der Seite mit den Suchergebnissen</target>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.footerContentUid">
+				<source>Footer content ID: Page ID stored the content of the footer</source>
+				<target>Footer Inhalte ID: Die Seiten-ID enthält den Inhalt der Fußzeile</target>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.metamenuUid">
+				<source>Meta Menu ID: Page ID of starting point for meta navigation</source>
+				<target>Meta Menu ID: Startpunkt der Seiten-ID für die Metanavigation</target>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.customcategory">
+				<source>minDistr Template</source>
+				<target>minDistr Beispielprojekt</target>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.customsubcategory.layout">
+				<source>Layout</source>
+				<target>Layout</target>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.customsubcategory.menu">
+				<source>Settings for navigation</source>
+				<target>Einstellungen für Navigation</target>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.customsubcategory.contentid">
+				<source>Page IDs</source>
+				<target>Seiten-IDs</target>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.customsubcategory.basic">
+				<source>Basic settings</source>
+				<target>Grundeinstellungen</target>
+			</trans-unit>
+			<trans-unit id="accordion_geschlossen" approved="yes">
+				<source>Accordion Content</source>
+				<target>Akkordeon Inhalt</target>
+			</trans-unit>
+			<trans-unit id="accordion_geöffnet" approved="yes">
+				<source>Accordion Header</source>
+				<target>Akkordeon Überschrift</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

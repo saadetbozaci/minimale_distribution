@@ -1,0 +1,12 @@
+# Changes the location of the YAML file, otherwise it will be stored in the fileadmin.
+TYPO3:
+  CMS:
+    Form:
+      persistenceManager:
+        # Set this to true if you want to allow backend users to edit forms stored within your own extension
+        allowSaveToExtensionPaths: true
+        #Set this to true if you want to allow backend users to delete forms stored within your own extension.
+        allowDeleteFromExtensionPaths: false
+        #Define the paths to folders which contain forms within your own extension. 
+        allowedExtensionPaths:
+          10: EXT:minimale_distribution/Resources/Private/Forms/

@@ -1,0 +1,3 @@
+# Import multiple files of a single directory in file name order
+@import "EXT:minimale_distribution/Configuration/TypoScript/Setup/*.typoscript"
+

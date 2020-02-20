@@ -1,0 +1,11 @@
+## LanguageMenuProcessor
+page.10.dataProcessing {
+  10 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+  10 {
+    ## A list of comma separated language IDs (e.g. 0,1,2) 
+    ## to use for the menu creation or auto to load from site languages
+    languages = auto
+    ## The variable to be used within the result
+    as = languageNavigation
+  }
+}

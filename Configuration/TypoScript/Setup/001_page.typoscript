@@ -1,0 +1,151 @@
+#############
+##  PAGE  ###
+## This defines what is rendered in the frontend.
+## PAGE is an object type. A good habit is to use page as the top-level object name for the content-page on a website.
+## TYPO3 does not initialize page by default. You must initialize this explicitly:
+page = PAGE
+
+#####################
+##  Meta viewport  ##
+## Sets the zoom factor on mobile devices
+page.meta {
+  viewport = width=device-width,initial-scale=1
+}
+
+##############################
+##  Favicon und Touchicons  ##
+## Inserts custom content in the head section of the website.
+page.headerData.1234 >
+page.headerData.1234 = COA
+page.headerData.1234 {
+  # iPhone
+  10 = IMAGE
+  10 {
+    file = {$minimale_distribution.favicon}
+    file.width = 60
+    file.height = 60
+    # defines the render layout for the IMAGE
+    layoutKey = apple-icon
+    layout {
+      # If you don’t have a responsive HTML layout you should use the default layout
+      # renders a normal non-responsive image as a img tag
+      apple-icon {
+        element = <link rel="apple-icon" href="###SRC###"###SELFCLOSINGTAGSLASH###>
+      }
+      apple-icon-sizes {
+        element = <link rel="apple-icon" sizes="###WIDTH###x###HEIGHT###" href="###SRC###"###SELFCLOSINGTAGSLASH###>
+      }
+      ms-icon {
+        element = <meta name="ms-icon" content="###SRC###"###SELFCLOSINGTAGSLASH###>
+      }
+      ms-icon-title {
+        element = <meta name="ms-icon-title###WIDTH###x###HEIGHT###" content="###SRC###"###SELFCLOSINGTAGSLASH###>
+      }
+      ms-wide {
+        element = <meta name="ms-wide###WIDTH###x###HEIGHT###" content="###SRC###"###SELFCLOSINGTAGSLASH###>
+      }
+    }
+  }
+
+  # iPad touch up to iOS7
+  20 < .10
+  20.layoutKey = apple-icon-sizes
+  20.file.width = 76
+  20.file.height = 76
+
+  # iPhone retina touch iOS7
+  30 < .20
+  30.file.width = 120
+  30.file.height = 120
+
+  # iPad retina touch iOS7
+  40 < .20
+  40.file.width = 152
+  40.file.height = 152
+
+  # IE10 Metro tile for pinned websites, iPad retina up to iOS 6
+  110 < .10
+  110.layoutKey = ms-icon
+  110.file.width = 144
+  110.file.height = 144
+
+  # Window 8.1 Metro tile
+  120 < .10
+  120.layoutKey = ms-icon-title
+  120.file.width = 70
+  120.file.height = 70
+
+  130 < .10
+  130.layoutKey = ms-icon-title
+  130.file.width = 150
+  130.file.height = 150
+
+  140 < .10
+  140.layoutKey = ms-icon-title
+  140.file.width = 310
+  140.file.height = 310
+
+  # 
+  150 < .10
+  150.layoutKey = ms-wide
+  150.file = {$minimale_distribution.iconWide}
+  150.file.width = 310
+  150.file.height = 150
+}
+
+## Insert the favicon
+page.shortcutIcon = {$minimale_distribution.favicon}
+page.meta {
+  #IE11TileforWindows8.1StartScreen
+  ms-config = none
+  ms-tooltip = {$minimale_distribution.companyname}
+  application-name = {$minimale_distribution.companyname}
+}
+
+#################
+##  CSS-Files  ##
+page.includeCSS {
+  ## Icon fonts see: https://fontawesome.com/icons?d=gallery&m=free
+  #20 = EXT:minimale_distribution/Resources/Public/Css/Fontawesome/brands.css
+  21 = EXT:minimale_distribution/Resources/Public/Css/Fontawesome/fontawesome.css
+  22 = EXT:minimale_distribution/Resources/Public/Css/Fontawesome/regular.css
+  23 = EXT:minimale_distribution/Resources/Public/Css/Fontawesome/solid.css
+
+  100 = EXT:minimale_distribution/Resources/Public/Css/style.css
+  
+  ## CSS for different topics of smartmenus
+  200 = EXT:minimale_distribution/Resources/Public/Css/Menu/sm-{$minimale_distribution.SmartmenuThemes}.css
+}
+
+############################
+##  Javascript im Header  ##
+page.includeJSLibs {
+  jquery = EXT:minimale_distribution/Resources/Public/JavaScript/Lib/jquery-3.4.1.min.js
+  jquery {
+    forceOnTop = 1
+    disableCompression = 1
+    excludeFromConcatenation = 1
+    allWrap = <!--[if lte IE 8]><script src="EXT:minimale_distribution/Resources/Public/JavaScript/Lib/jquery-1.12.4.min.js"></script><![endif]--><!--[if gt IE 8]><!-->|<!--<![endif]-->
+  }
+
+}
+
+############################
+##  Javascript im Footer  ##
+page.includeJSFooter {
+## Inlcude the SmartMenus jQuery plugin
+  10 = EXT:minimale_distribution/Resources/Public/JavaScript/Menu/jquery.smartmenus.min.js
+  10.disableCompression = 1
+  40 = EXT:minimale_distribution/Resources/Public/JavaScript/Menu/initSmartMenu.js
+
+## Include the lightbox file with jQuery
+  70 = EXT:minimale_distribution/Resources/Public/JavaScript/Galerie/lightbox-plus-jquery.min.js
+  70.disableCompression = 1
+
+## File f.e. with functions for pageup and mobile search
+  80 = EXT:minimale_distribution/Resources/Public/JavaScript/custom.js
+
+## Include the accordion funktion 
+  90 = EXT:minimale_distribution/Resources/Public/JavaScript/Accordion/accordion.js
+}
+

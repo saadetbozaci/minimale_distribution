@@ -1,0 +1,25 @@
+################
+##  EXT:Form  ##
+# YAML file that should contain our changes to the basic configuration. 
+# Since the numbers 10 to 30 are already reserved by form, we use a higher number 100
+# Because this configuration file is used in the backend module, we set the link in both objects plug-in and module:
+
+plugin.tx_form{
+    settings{
+        yamlConfigurations{
+            # register your own additional configuration
+            # choose a number higher than 30 (below is reserved)
+            100 = EXT:minimale_distribution/Configuration/Forms/setupforms.yaml
+        }
+    }
+}
+
+module.tx_form{
+    settings{
+        yamlConfigurations{
+            #Register your EXT:form configuration for the backend via TypoScript
+            100 = EXT:minimale_distribution/Configuration/Forms/setupforms.yaml
+        }
+    }
+}
+

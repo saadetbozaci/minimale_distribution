@@ -1,0 +1,52 @@
+mod.web_layout.BackendLayouts {
+  3col {
+    title = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:BE_Layout-3col
+    icon = EXT:minimale_distribution/Resources/Public/Icons/Backendlayouts/threecol.png
+    config {
+      backend_layout {
+        colCount = 3
+        rowCount = 3
+        rows {
+          1 {
+            columns {
+              1 {
+                name = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:column-above
+                colspan = 3
+                colPos = 4
+              }
+            }
+          }
+
+          2 {
+            columns {
+              1 {
+                name = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:column-left33
+                colPos = 0
+              }
+
+              2 {
+                name = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:column-middle33
+                colPos = 2
+              }
+
+              3 {
+                name = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:column-right33
+                colPos = 3
+              }
+            }
+          }
+
+          3 {
+            columns {
+              1 {
+                name = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:column-below
+                colspan = 3
+                colPos = 5
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+#######################
+###     CONFIG      ###
+#######################
+config {
+  headerComment (
+    Masterarbeit:
+    Saadet Bozaci
+    27456 ROW
+    Germany
+    E-Mail: s4saboza@uni-trier.de
+  )
+  
+  ######################
+  ##  HTML5 Settings  ##
+
+  ## Set doctype    
+  doctype = html5
+
+  ## Removes comments around content elements
+  disablePrefixComment = 1
+  
+  ################################
+  ##  Default Language: German  ##
+  sys_language_uid = 0
+  sys_language_overlay = hideNonTranslated
+  sys_language_mode = content_fallback;0
+
+  language = de
+  locale_all = de_DE.UTF-8
+  htmlTag_langKey = de
+  
+  ###################
+  ##  Admin-Panel  ##
+  ## Enable / disable all modules for Admin-Panel
+  ## Used to enable the various parts of the panel for users. All values are 0/1 booleans.
+  admPanel.enable.all = 0
+
+  ##################################
+  ##         indexedsearch        ##
+  ## In the following, the meta data are to be excluded from the indexing and the area to be indexed in the document body restricted.
+  ## To prevent the specified metadata from being indexed, the value 0 must be assigned to the index_metatags property of the CONFIG object.
+  index_enable = 1
+  index_externals = 1
+  index_metatags = 0
+
+  ############################################
+  ## ExceptionHandler for content elements  ##
+  ## If an exception is thrown during the processing of content elements, 
+  ## including all front extensions / plugins, this ExceptionHandler catches the exception 
+  ## and only reports with the words: Oops, an error occurred!
+  contentObjectExceptionHandler = 0
+}
+
+##########################################################
+##  Check constants compress/concatante CSS/JavaScript  ##
+## If set, CSS files referenced in page.includeCSS and the like will be minified and compressed.
+[{$minimale_distribution.compressCss} == '1']
+  config.compressCss = 1
+[END]
+
+## This merges Stylesheet files referenced in the Frontend in page.includeCSS and the like together.
+## Files are merged only, if their media attribute has the same value, e.g. if it is “all” for several files.
+[{$minimale_distribution.concatenateCss} == '1']
+  config.concatenateCss = 1
+[END]
+
+## This can significantly reduce file sizes of linked JavaScript files and thus decrease loading times
+[{$minimale_distribution.compressJs} == '1']
+  config.compressJs = 1
+[END]
+
+## This merges JavaScript files referenced in the Frontend in page.includeJS and the like together.
+[{$minimale_distribution.concatenateJs} == '1']
+  config.concatenateJs = 1
+[END]
+

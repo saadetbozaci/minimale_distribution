@@ -1,0 +1,99 @@
+###########################################
+##                TCEFORM                ##
+###########################################
+
+#########################################
+##         Backen layouts field        ##
+## It is not possible to select no backend
+## Backend Layout (subpages of this page)
+TCEFORM.pages.backend_layout_next_level.removeItems= -1
+## Backend Layout (this page only) 
+TCEFORM.pages.backend_layout.removeItems = -1
+
+#################### textmedia textpic#################
+##remove not needed image positions for responsive images
+## imageorient --> Bildposition
+TCEFORM.tt_content.imageorient.types.textmedia.keepItems = 2,10,17,18
+TCEFORM.tt_content.imageorient.types.textpic.keepItems = 2,10,17,18
+TCEFORM.tt_content.imageorient.disableNoMatchingValueElement = 1
+
+##default value for new content element textmedia
+mod.wizards.newContentElement.wizardItems.common.elements {
+  textmedia.tt_content_defValues {
+    imageorient = 2
+    imagecols = 1
+  }
+}
+
+## max. 4 cols for images in content elements
+TCEFORM.tt_content.imagecols.removeItems = 5,6,7,8
+
+## Content Elements: remove width and height fields for responsive images
+TCEFORM.tt_content {
+  imagewidth.disabled = 1
+  imageheight.disabled = 1
+}
+
+#############
+## General ##
+## Headertyp: 
+TCEFORM.tt_content.header_layout {
+  altLabels {
+    0 = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:Page_h1
+    1 =
+    2 = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:Theme_h2
+    3 = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:Headline_h3
+    4 = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:Headline_h4
+    5 = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:Headline_h5
+  }
+  removeItems = 1
+}
+
+##################################
+##       Appearance             ##
+## SpaceBefore- and SpaceAfterClass       ##
+## Changes distance to menu and footer    ##
+## Subpage properties to change apparence ##
+TCEFORM.tt_content.space_before_class {
+  removeItems = extra-small,extra-large
+}
+TCEFORM.tt_content.space_after_class {
+  removeItems = extra-small,extra-large
+}
+
+###############
+## Accordion ##
+TCEFORM.tt_content.frame_class {
+  removeItems = ruler-before,ruler-after,indent,indent-left,indent-right
+   addItems {
+      acc-closed = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:accordion_geschlossen
+      acc-open = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:accordion_geöffnet
+    }
+}
+
+###########################
+## show Default language ##
+## default flag          ##
+mod.SHARED {
+  defaultLanguageFlag = de
+  defaultLanguageLabel = German
+}
+
+#################################
+## RTE Configuration: CKEditor ##
+
+## Standard-Konfiguration
+RTE.default.preset = default
+
+## Minimal-Konfiguration with a few buttons
+#RTE.default.preset = minimal
+
+## Umfangreiche Konfiguration with many buttons
+#RTE.default.preset = full
+
+## Custom Konfiguration with address button
+#RTE.default.preset = custom
+#lib.parseFunc_RTE.nonTypoTagStdWrap.encapsLines.encapsTagList := addToList(address)
+
+#################################
+

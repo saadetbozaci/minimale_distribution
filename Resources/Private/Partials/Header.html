@@ -1,0 +1,39 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:vhs="http://typo3.org/ns/minimale_distribution/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<header class="content-header">
+    <div class="max-content-width">
+        <div class="grid">
+            <div class="col-6-t-8 float-right wrapper-right">
+                <f:if condition="{showLang}==1">
+                    <div class="col-4-t-8 align-right">
+                        <f:if condition="{languageNavigation}">
+                            <f:render partial="languageNavigation" arguments="{_all}" />
+                        </f:if>
+                    </div>
+                </f:if>
+                <f:if condition="{settings.hideSearch}">
+                    <f:then>
+                        <div class="grid col-4-dmin-0 align-right{f:if(condition: '{showLang}==0', then: ' float-right', else: '')}">
+                            <i class="search-hide-btn fa fa-search fa-lg fa-2x mobilelink" aria-hidden="true"></i>
+                        </div>
+                        <div class="grid col-8-t-10 wrapper-search{f:if(condition: '{showLang}==0', then: ' float-right', else: '')}">
+                            <f:cObject typoscriptObjectPath="searchfield" />
+                        </div>
+                    </f:then>
+                </f:if>
+            </div>
+            <div class="col-6-t-4-m-12 wrapper-logo">
+                <vhs:exists file="{settings.logoFile}">
+                    <f:link.typolink parameter="{settings.logoRootID}" title="{settings.logoTitle}">
+                        <f:image src="{settings.logoFile}" alt="{settings.logoAltText}" />
+                    </f:link.typolink>
+                </vhs:exists>
+            </div>
+        </div>
+    </div>
+    <div class="{SmartmenuThemes}-menubg wrapper-topmenu {f:if(condition: '{menuType} == 1', then: ' hidden-mdup', else: '')}">
+        <nav class="menu-main menu-horizontal{f:if(condition: '{menuType} == 2', then: ' onelevel-mdup', else: '')}">
+            <f:render partial="MainNavigation" arguments="{_all}" />
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-01-20 T22:45:50Z">
+		<header>
+			<generator>locallang_Editor</generator>
+			<authorName>Saadet Bozacinet</authorName>
+			<authorEmail>s4saboza@uni-trier.de</authorEmail>
+		</header>
+		<body>
+			<trans-unit id="BE_Layout-1col-standard">
+				<source>Standard: One columnn Layout</source>
+			</trans-unit>
+			<trans-unit id="BE_Layout-2col">
+				<source>Two Column Layout</source>
+			</trans-unit>
+			<trans-unit id="BE_Layout-3col">
+				<source>Three Column Layout</source>
+			</trans-unit>
+			<trans-unit id="BE_Layout-footer">
+				<source>Footer Layout</source>
+			</trans-unit>
+			<trans-unit id="column-above">
+				<source>Top Content 100%</source>
+			</trans-unit>
+			<trans-unit id="column-main">
+				<source>Main Content</source>
+			</trans-unit>
+			<trans-unit id="column-below">
+				<source>Bottom Content 100%</source>
+			</trans-unit>
+			<trans-unit id="column-left50">
+				<source>Left Content 50%</source>
+			</trans-unit>
+			<trans-unit id="column-right50">
+				<source>Right Content 50%</source>
+			</trans-unit>
+			<trans-unit id="column-left33">
+				<source>Left Content 33%</source>
+			</trans-unit>
+			<trans-unit id="column-middle33">
+				<source>Middle Content 33%</source>
+			</trans-unit>
+			<trans-unit id="column-right33">
+				<source>Right Content 33%</source>
+			</trans-unit>
+			<trans-unit id="Page_h1">
+				<source>h1: Headline 1</source>
+			</trans-unit>
+			<trans-unit id="Theme_h2">
+				<source>h2: Headline 2</source>
+			</trans-unit>
+			<trans-unit id="Headline_h3">
+				<source>h3: Headline 3</source>
+			</trans-unit>
+			<trans-unit id="Headline_h4">
+				<source>h4: Headline 4</source>
+			</trans-unit>
+			<trans-unit id="Headline_h5">
+				<source>h5: Headline 5</source>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.companyname">
+				<source>Company Name: Complete legal name of a firm,
+				used in the copyright Information (in the footer).</source>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.compressCss">
+				<source>Compress CSS: Activate compression 
+				to compress or to reduce CSS code siz.</source>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.compressJs">
+				<source>Compress JavaScript: Activate compression
+				to compress or to reduce JavaScript code size.</source>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.concatenateCss">
+				<source>Concatenate CSS:Activate concatenation 
+				of multiple CSS files into one single file.</source>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.concatenateJs">
+				<source>Concatenate JavaScript:Activate concatenation 
+				of multiple JavaScript files into one single file.</source>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.logoFile">
+				<source>Logo:Path to an image file used as logo in the header of the website, f.e. fileadmin/images/my_bgr.jpg,
+					or EXT:myext/Resources/Public/Images/my_bgr.jpg</source>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.favicon">
+				<source>App-/FavIcon quadratic: Path to an image used as Favicon in browsers and as touch icons for
+					smartphones and Tablets. You need 2 variants of this icon to cover all devices, this one has to be quadratic.
+					Note that an appropriately large image must be chosen so that it can be derived for everyone else.</source>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.iconWide">
+				<source>App-/FavIcon Wide: Path to a second wide image used as Favicon in browsers and as touch icons for
+					smartphones and Tablets. This variant need an aspect ratio of 31:15, f.e: width 310px, height 150px 
+					for windows start menu.</source>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.showLang">
+				<source>Deactivate language menu: Turn on and off the language menu.</source>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.menuType">
+				<source>Navigation type: Select the style of the main navigation. Three types of variants are available.</source>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.SmartmenuThemes">
+				<source>SmartmenuThemes: For the main SmartmenuThemes there are two different smartmenus.</source>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.rootId">
+				<source>Root ID: ID of the root page</source>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.searchResultUid">
+				<source>Search Result ID: ID of the page for search results</source>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.footerContentUid">
+				<source>Footer content ID: ID of the footer page, stored the content for the footer of the website</source>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.metamenuUid">
+				<source> Meta Menu ID: Page ID of starting point for meta navigation.</source>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.customcategory">
+				<source>minDistr Templateproject</source>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.customsubcategory.layout">
+				<source>Layout</source>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.customsubcategory.menu">
+				<source>Settings for navigation</source>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.customsubcategory.contentid">
+				<source>Page IDs</source>
+			</trans-unit>
+			<trans-unit id="minimale_distribution.customsubcategory.basic">
+				<source>Basic settings</source>
+			</trans-unit>
+			<trans-unit id="accordion_geschlossen" approved="yes">
+				<source>Accordion Content</source>
+			</trans-unit>
+			<trans-unit id="accordion_geöffnet" approved="yes">
+				<source>Accordion Header</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

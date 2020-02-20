@@ -1,0 +1,17 @@
+<f:switch expression="{menuType}">
+    <f:case value="0"></f:case>
+    <!-- col-3-t-3-m-12: Left Column of the Content Area for mainmenu and mainmenu-v-->
+    <f:case value="1">
+        <div class="col-3-t-4-m-12">
+            <ul id="main-menu-v" class="sm sm-vertical sm-{SmartmenuThemes} hidden-sm">
+                <f:cObject typoscriptObjectPath="mainmenu" />
+            </ul>
+        </div>
+    </f:case>
+    <!-- col-3-t-3-m-12: Left Column of the Content Area: level 1 of the mainmenu-v-->
+    <f:case value="2">
+        <div class="col-3-t-4-m-0">
+            <f:cObject typoscriptObjectPath="mainmenu-v-level1" /> &nbsp;
+        </div>
+    </f:case>
+</f:switch>

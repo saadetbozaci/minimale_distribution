@@ -1,0 +1,13 @@
+<f:layout name="Standard" />
+
+<f:section name="Content">
+    <div class="main-content max-content-width">
+        <div class="grid">
+            <f:render partial="VerticalNavigation" arguments="{_all}" />
+            <div class="{f:if(condition:'{menuType}!=0', then: 'col-9-t-8-m-12', else: 'col-12')}">
+                <f:format.raw>{content0}</f:format.raw>
+            </div>
+        </div>
+    </div>
+    </div>
+</f:section>

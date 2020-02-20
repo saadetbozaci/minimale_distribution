@@ -1,0 +1,78 @@
+# Import multiple files of a single directory in file name order
+@import "EXT:minimale_distribution/Configuration/TypoScript/Constants/*.typoscript"
+
+##########################
+##  The Constant Editor ##
+## Konstanten des Beispielprojekts T3 9LTS
+# customcategory=minimale_distribution=LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:minimale_distribution.customcategory
+# customsubcategory=basic=LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:minimale_distribution.customsubcategory.basic
+# customsubcategory=contentid=LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:minimale_distribution.customsubcategory.contentid
+# customsubcategory=layout=LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:minimale_distribution.customsubcategory.layout
+# customsubcategory=menu=LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:minimale_distribution.customsubcategory.menu
+
+
+minimale_distribution {
+
+  ######################
+  ##  Basic settings  ##
+  ######################
+  # cat = minimale_distribution/basic/a; type = string; label = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:minimale_distribution.companyname
+  companyname = Company
+
+  # cat = minimale_distribution/basic/d; type = boolean; label = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:minimale_distribution.compressCss
+  compressCss = 0
+
+  # cat = minimale_distribution/basic/e; type = boolean; label = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:minimale_distribution.concatenateCss
+  concatenateCss = 0
+
+  # cat = minimale_distribution/basic/f; type = boolean; label = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:minimale_distribution.compressJs
+  compressJs = 0
+
+  # cat = minimale_distribution/basic/g; type = boolean; label = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:minimale_distribution.concatenateJs
+  concatenateJs = 0
+
+  ################
+  ##  Page IDs  ##
+  ################
+  # cat = minimale_distribution/contentid/a; type = int+; label = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:minimale_distribution.rootId
+  rootId = 1
+
+  ########################################################################
+  ##  NOTE: UID TYPO3: Display the UID in the page tree of the backend  ##
+  ##        Possibility of changing the UID in the Constant Editor      ##
+  ########################################################################
+
+  # cat = minimale_distribution/contentid/b; type = string; label = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:minimale_distribution.searchResultUid
+  searchformUid = 2
+
+  # cat = minimale_distribution/contentid/d; type = int+; label = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:minimale_distribution.footerContentUid
+  footerContentUid = 3
+
+  # cat = minimale_distribution/contentid/e; type = int+; label = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:minimale_distribution.metamenuUid
+  metamenuUid = 4
+
+  ##############
+  ##  Layout  ##
+  ##############
+  # cat = minimale_distribution/layout/a; type = string; label = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:minimale_distribution.logoFile
+  logoFile = EXT:minimale_distribution/Resources/Public/Images/company_logo.png
+
+  # cat = minimale_distribution/layout/b; type = string; label = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:minimale_distribution.favicon
+  favicon = EXT:minimale_distribution/Resources/Public/Icons/favicon.png
+
+  # cat = minimale_distribution/layout/c; type = string; label = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:minimale_distribution.iconWide
+  iconWide = EXT:minimale_distribution/Resources/Public/Icons/wide.png
+
+  ##############################
+  ##  Settings for navigation ##
+  ##############################
+
+  #cat = minimale_distribution/menu/a; type = boolean; label = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:minimale_distribution.showLang
+  showLang = 1
+
+  # cat = minimale_distribution/menu/b; type = options [Horizontale Navigation (Standard)=0,Vertikale Navigation=1, Horizontale und vertikale Navigation=2]; label = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:minimale_distribution.menuType
+  menuType = 0
+
+  # cat = minimale_distribution/menu/c; type = options [Gray=gray,Simple=simple]; label = LLL:EXT:minimale_distribution/Resources/Private/Language/locallang.xlf:minimale_distribution.SmartmenuThemes
+  SmartmenuThemes = gray
+}

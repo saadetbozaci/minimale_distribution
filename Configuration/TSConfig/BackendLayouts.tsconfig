@@ -1,0 +1,3 @@
+@import "EXT:minimale_distribution/Configuration/TSConfig/BackendLayouts/standard.tsconfig"
+@import "EXT:minimale_distribution/Configuration/TSConfig/BackendLayouts/2col.tsconfig"
+@import "EXT:minimale_distribution/Configuration/TSConfig/BackendLayouts/3col.tsconfig"

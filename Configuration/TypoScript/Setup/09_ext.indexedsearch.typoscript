@@ -1,0 +1,24 @@
+#########################
+##   EXT: indexsearch  ##
+##  Plugin configuration
+plugin.tx_indexedsearch {
+	settings {
+		# do not show the rules
+		displayRules = 0
+		# do not show a link to the advanced search
+		displayAdvancedSearchLink = 0
+	}
+}
+
+## search results only in the default language de 
+plugin.tx_indexedsearch.settings.defaultOptions.languageUid = 0
+
+## additional language English 
+[siteLanguage("title") == "English"]
+  plugin.tx_indexedsearch.settings.defaultOptions.languageUid = 1
+[END]
+
+# Possibility to add more languages then comment out the area below
+#[siteLanguage("title") == "Further Language"]
+#  plugin.tx_indexedsearch.settings.defaultOptions.languageUid = 2
+#[END]

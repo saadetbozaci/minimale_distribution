@@ -1,0 +1,688 @@
+/* Mobile first layout SmartMenus Core CSS (it's not recommended editing these rules)
+   You need this once per page no matter how many menu trees or different themes you use.
+-------------------------------------------------------------------------------------------*/
+
+.sm {
+    position: relative;
+    z-index: 999;
+}
+
+.sm,
+.sm ul,
+.sm li {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    direction: ltr;
+    text-align: left;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.sm-rtl,
+.sm-rtl ul,
+.sm-rtl li {
+    direction: rtl;
+    text-align: right;
+}
+
+.sm>li>h1,
+.sm>li>h2,
+.sm>li>h3,
+.sm>li>h4,
+.sm>li>h5,
+.sm>li>h6 {
+    margin: 0;
+    padding: 0;
+}
+
+.sm ul {
+    display: none;
+}
+
+.sm li,
+.sm a {
+    position: relative;
+}
+
+.sm a {
+    display: block;
+}
+
+.sm a.disabled {
+    cursor: not-allowed;
+}
+
+.sm:after {
+    content: "\00a0";
+    display: block;
+    height: 0;
+    font: 0px/0 serif;
+    clear: both;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.sm,
+.sm *,
+.sm *:before,
+.sm *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.main-menu-btn {
+    position: relative;
+    display: inline-block;
+    width: auto;
+    text-indent: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    padding: 4.5rem 1rem;
+}
+
+
+/* hamburger icon */
+
+.main-menu-btn-icon,
+.main-menu-btn-icon:before,
+.main-menu-btn-icon:after {
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    height: 2px;
+    width: 24px;
+    background: #545454;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+}
+
+.main-menu-btn-icon:before {
+    content: '';
+    top: -7px;
+    left: 0;
+}
+
+.main-menu-btn-icon:after {
+    content: '';
+    top: 7px;
+    left: 0;
+}
+
+
+/* x icon */
+
+#main-menu-state:checked~.main-menu-btn .main-menu-btn-icon {
+    height: 0;
+    background: transparent;
+}
+
+#main-menu-state:checked~.main-menu-btn .main-menu-btn-icon:before {
+    top: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+#main-menu-state:checked~.main-menu-btn .main-menu-btn-icon:after {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+/* hide menu state checkbox (keep it visible to screen readers) */
+
+#main-menu-state {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+
+/* hide the menu in mobile view */
+
+#main-menu-state:not(:checked)~#main-menu {
+    display: none;
+}
+
+#main-menu-state:checked~#main-menu {
+    display: block;
+}
+
+@media (min-width: 577px) {
+    /* hide the button in desktop view */
+    .main-menu-btn {
+        position: absolute;
+        top: -99999px;
+    }
+    /* always show the menu in desktop view */
+    #main-menu-state:not(:checked)~#main-menu {
+        display: block;
+    }
+}
+
+.sm-gray {
+    background: transparent;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sm-gray a,
+.sm-gray a:hover,
+.sm-gray a:focus,
+.sm-gray a:active {
+    padding: 0.75rem 1rem;
+    /* make room for the toggle button (sub indicator) */
+    padding-right: 58px;
+    background: #545454;
+    background-image: -webkit-gray(linear, to bottom, to top, color-stop(0%, #ccc), color-stop(100%, #545454));
+    background-image: -webkit-linear-gray(to bottom, #ccc, #545454);
+    background-image: -moz-linear-gray(to bottom, #ccc, #545454);
+    background-image: -o-linear-gray(to bottom, #ccc, #545454);
+    background-image: linear-gray(to bottom, #ccc, #545454);
+    color: #fff;
+    line-height: 23px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.sm-gray a.current {
+    background: #444;
+    background-image: -webkit-gray(linear, to bottom, to top, color-stop(0%, #999), color-stop(100%, #444));
+    background-image: -webkit-linear-gray(to bottom, #999, #444);
+    background-image: -moz-linear-gray(to bottom, #999, #444);
+    background-image: -o-linear-gray(to bottom, #999, #444);
+    background-image: linear-gray(to bottom, #999, #444);
+    color: #fff;
+}
+
+.sm-gray a.disabled {
+    color: #444;
+}
+
+.sm-gray a span.sub-arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -17px;
+    left: auto;
+    right: 4px;
+    width: 34px;
+    height: 34px;
+    overflow: hidden;
+    font: bold 16px/34px monospace !important;
+    text-align: center;
+    text-shadow: none;
+    background: rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.sm-gray a.highlighted span.sub-arrow:before {
+    display: block;
+    content: '-';
+}
+
+.sm-gray>li:first-child>a,
+.sm-gray>li:first-child> :not(ul) a {
+    -webkit-border-radius: 8px 8px 0 0;
+    -moz-border-radius: 8px 8px 0 0;
+    -ms-border-radius: 8px 8px 0 0;
+    -o-border-radius: 8px 8px 0 0;
+    border-radius: 8px 8px 0 0;
+}
+
+.sm-gray>li:last-child>a,
+.sm-gray>li:last-child>*:not(ul) a,
+.sm-gray>li:last-child>ul,
+.sm-gray>li:last-child>ul>li:last-child>a,
+.sm-gray>li:last-child>ul>li:last-child>*:not(ul) a,
+.sm-gray>li:last-child>ul>li:last-child>ul,
+.sm-gray>li:last-child>ul>li:last-child>ul>li:last-child>a,
+.sm-gray>li:last-child>ul>li:last-child>ul>li:last-child>*:not(ul) a,
+.sm-gray>li:last-child>ul>li:last-child>ul>li:last-child>ul,
+.sm-gray>li:last-child>ul>li:last-child>ul>li:last-child>ul>li:last-child>a,
+.sm-gray>li:last-child>ul>li:last-child>ul>li:last-child>ul>li:last-child>*:not(ul) a,
+.sm-gray>li:last-child>ul>li:last-child>ul>li:last-child>ul>li:last-child>ul,
+.sm-gray>li:last-child>ul>li:last-child>ul>li:last-child>ul>li:last-child>ul>li:last-child>a,
+.sm-gray>li:last-child>ul>li:last-child>ul>li:last-child>ul>li:last-child>ul>li:last-child>*:not(ul) a,
+.sm-gray>li:last-child>ul>li:last-child>ul>li:last-child>ul>li:last-child>ul>li:last-child>ul {
+    -webkit-border-radius: 0 0 8px 8px;
+    -moz-border-radius: 0 0 8px 8px;
+    -ms-border-radius: 0 0 8px 8px;
+    -o-border-radius: 0 0 8px 8px;
+    border-radius: 0 0 8px 8px;
+}
+
+.sm-gray>li:last-child>a.highlighted,
+.sm-gray>li:last-child>*:not(ul) a.highlighted,
+.sm-gray>li:last-child>ul>li:last-child>a.highlighted,
+.sm-gray>li:last-child>ul>li:last-child>*:not(ul) a.highlighted,
+.sm-gray>li:last-child>ul>li:last-child>ul>li:last-child>a.highlighted,
+.sm-gray>li:last-child>ul>li:last-child>ul>li:last-child>*:not(ul) a.highlighted,
+.sm-gray>li:last-child>ul>li:last-child>ul>li:last-child>ul>li:last-child>a.highlighted,
+.sm-gray>li:last-child>ul>li:last-child>ul>li:last-child>ul>li:last-child>*:not(ul) a.highlighted,
+.sm-gray>li:last-child>ul>li:last-child>ul>li:last-child>ul>li:last-child>ul>li:last-child>a.highlighted,
+.sm-gray>li:last-child>ul>li:last-child>ul>li:last-child>ul>li:last-child>ul>li:last-child>*:not(ul) a.highlighted {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+}
+
+.sm-gray ul {
+    background: #fff;
+}
+
+.sm-gray ul ul {
+    background: rgba(102, 102, 102, 0.1);
+}
+
+.sm-gray ul a,
+.sm-gray ul a:hover,
+.sm-gray ul a:focus,
+.sm-gray ul a:active {
+    background: transparent;
+    color: #545454;
+    text-shadow: none;
+    border-left: 8px solid transparent;
+}
+
+.sm-gray ul a:hover,
+.sm-gray ul a:focus,
+.sm-gray ul a:active,
+.sm-gray ul a.highlighted {
+    color: #545454;
+}
+
+.sm-gray ul a.current {
+    background: #444;
+    background-image: -webkit-gray(linear, to bottom, to top, color-stop(0%, #999), color-stop(100%, #444));
+    background-image: -webkit-linear-gray(to bottom, #999, #444);
+    background-image: -moz-linear-gray(to bottom, #999, #444);
+    background-image: -o-linear-gray(to bottom, #999, #444);
+    background-image: linear-gray(to bottom, #999, #444);
+    color: #fff;
+}
+
+.sm-gray ul a.disabled {
+    color: #b3b3b3;
+}
+
+.sm-gray ul ul a,
+.sm-gray ul ul a:hover,
+.sm-gray ul ul a:focus,
+.sm-gray ul ul a:active {
+    border-left: 16px solid transparent;
+}
+
+.sm-gray ul ul ul a,
+.sm-gray ul ul ul a:hover,
+.sm-gray ul ul ul a:focus,
+.sm-gray ul ul ul a:active {
+    border-left: 24px solid transparent;
+}
+
+.sm-gray ul ul ul ul a,
+.sm-gray ul ul ul ul a:hover,
+.sm-gray ul ul ul ul a:focus,
+.sm-gray ul ul ul ul a:active {
+    border-left: 32px solid transparent;
+}
+
+.sm-gray ul ul ul ul ul a,
+.sm-gray ul ul ul ul ul a:hover,
+.sm-gray ul ul ul ul ul a:focus,
+.sm-gray ul ul ul ul ul a:active {
+    border-left: 40px solid transparent;
+}
+
+.sm-gray ul li {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.sm-gray ul li:first-child {
+    border-top: 0;
+}
+
+@media (min-width: 577px) {
+    /* Switch to desktop layout
+  -----------------------------------------------
+     These transform the menu tree from
+     collapsible to desktop (navbar + dropdowns)
+  -----------------------------------------------*/
+    /* start... (it's not recommended editing these rules) */
+    .sm-gray ul {
+        position: absolute;
+        width: 12em;
+    }
+    .sm-gray li {
+        float: left;
+    }
+    .sm-gray.sm-rtl li {
+        float: right;
+    }
+    .sm-gray ul li,
+    .sm-gray.sm-rtl ul li,
+    .sm-gray.sm-vertical li {
+        float: none;
+    }
+    .sm-gray a {
+        white-space: nowrap;
+    }
+    .sm-gray ul a,
+    .sm-gray.sm-vertical a {
+        white-space: normal;
+    }
+    .sm-gray .sm-nowrap>li>a,
+    .sm-gray .sm-nowrap>li> :not(ul) a {
+        white-space: nowrap;
+    }
+    /* ...end */
+    .sm-gray {
+        background: #545454;
+        background-image: -webkit-gray(linear, to bottom, to top, color-stop(0%, #ccc), color-stop(100%, #545454));
+        background-image: -webkit-linear-gray(to bottom, #ccc, #545454);
+        background-image: -moz-linear-gray(to bottom, #ccc, #545454);
+        background-image: -o-linear-gray(to bottom, #ccc, #545454);
+        background-image: linear-gray(to bottom, #ccc, #545454);
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+        border-radius: 8px;
+        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    }
+    .sm-gray a,
+    .sm-gray a:hover,
+    .sm-gray a:focus,
+    .sm-gray a:active,
+    .sm-gray a.highlighted {
+        padding: 0.75rem 1rem;
+        background: #545454;
+        background-image: -webkit-gray(linear, to bottom, to top, color-stop(0%, #ccc), color-stop(100%, #545454));
+        background-image: -webkit-linear-gray(to bottom, #ccc, #545454);
+        background-image: -moz-linear-gray(to bottom, #ccc, #545454);
+        background-image: -o-linear-gray(to bottom, #ccc, #545454);
+        background-image: linear-gray(to bottom, #ccc, #545454);
+        color: #fff;
+    }
+    .sm-gray a:hover,
+    .sm-gray a:focus,
+    .sm-gray a:active,
+    .sm-gray a.highlighted {
+        background: #545454;
+        background-image: -webkit-gray(linear, to bottom, to top, color-stop(0%, #ccc), color-stop(100%, #545454));
+        background-image: -webkit-linear-gray(to bottom, #ccc, #545454);
+        background-image: -moz-linear-gray(to bottom, #ccc, #545454);
+        background-image: -o-linear-gray(to bottom, #ccc, #545454);
+        background-image: linear-gray(to bottom, #ccc, #545454);
+    }
+    .sm-gray a.current {
+        background: #444;
+        background-image: -webkit-gray(linear, to bottom, to top, color-stop(0%, #999), color-stop(100%, #444));
+        background-image: -webkit-linear-gray(to bottom, #999, #444);
+        background-image: -moz-linear-gray(to bottom, #999, #444);
+        background-image: -o-linear-gray(to bottom, #999, #444);
+        background-image: linear-gray(to bottom, #999, #444);
+        color: #fff;
+    }
+    .sm-gray a.disabled {
+        background: #545454;
+        background-image: -webkit-gray(linear, to bottom, to top, color-stop(0%, #ccc), color-stop(100%, #545454));
+        background-image: -webkit-linear-gray(to bottom, #ccc, #545454);
+        background-image: -moz-linear-gray(to bottom, #ccc, #545454);
+        background-image: -o-linear-gray(to bottom, #ccc, #545454);
+        background-image: linear-gray(to bottom, #ccc, #161616);
+        color: #444;
+    }
+    .sm-gray a span.sub-arrow {
+        top: auto;
+        margin-top: 0;
+        bottom: 2px;
+        left: 50%;
+        margin-left: -5px;
+        right: auto;
+        width: 0;
+        height: 0;
+        border-width: 5px;
+        border-style: solid dashed dashed dashed;
+        border-color: #444 transparent transparent transparent;
+        background: transparent;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-radius: 0;
+    }
+    .sm-gray a.highlighted span.sub-arrow:before {
+        display: none;
+    }
+    .sm-gray>li:first-child>a,
+    .sm-gray>li:first-child> :not(ul) a {
+        -webkit-border-radius: 8px 0 0 8px;
+        -moz-border-radius: 8px 0 0 8px;
+        -ms-border-radius: 8px 0 0 8px;
+        -o-border-radius: 8px 0 0 8px;
+        border-radius: 8px 0 0 8px;
+    }
+    .sm-gray>li:last-child>a,
+    .sm-gray>li:last-child> :not(ul) a {
+        -webkit-border-radius: 0 8px 8px 0 !important;
+        -moz-border-radius: 0 8px 8px 0 !important;
+        -ms-border-radius: 0 8px 8px 0 !important;
+        -o-border-radius: 0 8px 8px 0 !important;
+        border-radius: 0 8px 8px 0 !important;
+    }
+    .sm-gray>li {
+        border-left: 1px solid #ccc;
+    }
+    .sm-gray>li:first-child {
+        border-left: 0;
+    }
+    .sm-gray ul {
+        border: 1px solid #a8a8a8;
+        padding: 7px 0;
+        background: white;
+        -webkit-border-radius: 0 0 4px 4px !important;
+        -moz-border-radius: 0 0 4px 4px !important;
+        -ms-border-radius: 0 0 4px 4px !important;
+        -o-border-radius: 0 0 4px 4px !important;
+        border-radius: 0 0 4px 4px !important;
+        -webkit-box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+    }
+    .sm-gray ul ul {
+        -webkit-border-radius: 4px !important;
+        -moz-border-radius: 4px !important;
+        -ms-border-radius: 4px !important;
+        -o-border-radius: 4px !important;
+        border-radius: 4px !important;
+        background: white;
+    }
+    .sm-gray ul a,
+    .sm-gray ul a:hover,
+    .sm-gray ul a:focus,
+    .sm-gray ul a:active,
+    .sm-gray ul a.highlighted {
+        border: 0 !important;
+        padding: 0.75rem 1rem;
+        background: transparent;
+        color: #545454;
+        -webkit-border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+        -ms-border-radius: 0 !important;
+        -o-border-radius: 0 !important;
+        border-radius: 0 !important;
+    }
+    .sm-gray ul a:hover,
+    .sm-gray ul a:focus,
+    .sm-gray ul a:active,
+    .sm-gray ul a.highlighted {
+        background: #545454;
+        background-image: -webkit-gray(linear, to bottom, to top, color-stop(0%, #ccc), color-stop(100%, #545454));
+        background-image: -webkit-linear-gray(to bottom, #ccc, #545454);
+        background-image: -moz-linear-gray(to bottom, #ccc, #545454);
+        background-image: -o-linear-gray(to bottom, #ccc, #545454);
+        background-image: linear-gray(to bottom, #ccc, #545454);
+        color: #fff;
+    }
+    .sm-gray ul a.current {
+        background: #444;
+        background-image: -webkit-gray(linear, to bottom, to top, color-stop(0%, #999), color-stop(100%, #444));
+        background-image: -webkit-linear-gray(to bottom, #999, #444);
+        background-image: -moz-linear-gray(to bottom, #999, #444);
+        background-image: -o-linear-gray(to bottom, #999, #444);
+        background-image: linear-gray(to bottom, #999, #444);
+        color: #fff;
+    }
+    .sm-gray ul a.disabled {
+        background: white;
+        color: #b3b3b3;
+    }
+    .sm-gray ul a span.sub-arrow {
+        top: 50%;
+        margin-top: -5px;
+        bottom: auto;
+        left: auto;
+        margin-left: 0;
+        right: 10px;
+        border-style: dashed dashed dashed solid;
+        border-color: transparent transparent transparent #444;
+    }
+    .sm-gray ul li {
+        border: 0;
+    }
+    .sm-gray span.scroll-up,
+    .sm-gray span.scroll-down {
+        position: absolute;
+        display: none;
+        visibility: hidden;
+        overflow: hidden;
+        background: white;
+        height: 20px;
+    }
+    .sm-gray span.scroll-up-arrow,
+    .sm-gray span.scroll-down-arrow {
+        position: absolute;
+        top: -2px;
+        left: 50%;
+        margin-left: -8px;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        border-width: 0.25rem;
+        border-style: dashed dashed solid dashed;
+        border-color: transparent transparent #444 transparent;
+    }
+    .sm-gray span.scroll-down-arrow {
+        top: 6px;
+        border-style: solid dashed dashed dashed;
+        border-color: #444 transparent transparent transparent;
+    }
+    .sm-gray.sm-rtl.sm-vertical a span.sub-arrow {
+        right: auto;
+        left: 10px;
+        border-style: dashed solid dashed dashed;
+        border-color: transparent #444 transparent transparent;
+    }
+    .sm-gray.sm-rtl>li:first-child>a,
+    .sm-gray.sm-rtl>li:first-child> :not(ul) a {
+        -webkit-border-radius: 0 0.25rem 0.25rem 0;
+        -moz-border-radius: 0 0.25rem 0.25rem 0;
+        -ms-border-radius: 0 0.25rem 0.25rem 0;
+        -o-border-radius: 0 0.25rem 0.25rem 0;
+        border-radius: 0 0.25rem 0.25rem 0;
+    }
+    .sm-gray.sm-rtl>li:last-child>a,
+    .sm-gray.sm-rtl>li:last-child> :not(ul) a {
+        -webkit-border-radius: 0.25rem 0 0 0.25rem !important;
+        -moz-border-radius: 0.25rem 0 0 0.25rem !important;
+        -ms-border-radius: 0.25rem 0 0 0.25rem !important;
+        -o-border-radius: 0.25rem 0 0 0.25rem !important;
+        border-radius: 0.25rem 0 0 0.25rem !important;
+    }
+    .sm-gray.sm-rtl>li:first-child {
+        border-left: 1px solid #444;
+    }
+    .sm-gray.sm-rtl>li:last-child {
+        border-left: 0;
+    }
+    .sm-gray.sm-rtl ul a span.sub-arrow {
+        right: auto;
+        left: 10px;
+        border-style: dashed solid dashed dashed;
+        border-color: transparent #444 transparent transparent;
+    }
+    .sm-gray.sm-vertical {
+        -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    }
+    .sm-gray.sm-vertical a {
+        padding: 0.75rem 1rem;
+    }
+    .sm-gray.sm-vertical a span.sub-arrow {
+        top: 50%;
+        margin-top: -5px;
+        bottom: auto;
+        left: auto;
+        margin-left: 0;
+        right: 10px;
+        border-style: dashed dashed dashed solid;
+        border-color: transparent transparent transparent #444;
+    }
+    .sm-gray.sm-vertical>li:first-child>a,
+    .sm-gray.sm-vertical>li:first-child> :not(ul) a {
+        -webkit-border-radius: 0.25rem 0.25rem 0 0;
+        -moz-border-radius: 0.25rem 0.25rem 0 0;
+        -ms-border-radius: 0.25rem 0.25rem 0 0;
+        -o-border-radius: 0.25rem 0.25rem 0 0;
+        border-radius: 0.25rem 0.25rem 0 0;
+    }
+    .sm-gray.sm-vertical>li:last-child>a,
+    .sm-gray.sm-vertical>li:last-child> :not(ul) a {
+        -webkit-border-radius: 0 0 0.25rem 0.25rem !important;
+        -moz-border-radius: 0 0 0.25rem 0.25rem !important;
+        -ms-border-radius: 0 0 0.25rem 0.25rem !important;
+        -o-border-radius: 0 0 0.25rem 0.25rem !important;
+        border-radius: 0 0 0.25rem 0.25rem !important;
+    }
+    .sm-gray.sm-vertical>li {
+        border-left: 0 !important;
+    }
+    .sm-gray.sm-vertical ul {
+        -webkit-border-radius: 0.125rem !important;
+        -moz-border-radius: 0.125rem !important;
+        -ms-border-radius: 0.125rem !important;
+        -o-border-radius: 0.125rem !important;
+        border-radius: 0.125rem !important;
+    }
+    .sm-gray.sm-vertical ul a {
+        padding: 0.75rem 1rem;
+    }
+}
+
+
+/*# sourceMappingURL=sm-gray.css.map */

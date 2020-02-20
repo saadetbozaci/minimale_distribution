@@ -1,0 +1,115 @@
+#########################
+##  _CSS_DEFAULT_STYLE  ##
+## outputs a set of default styles
+## Most likely this will provide an acceptable default display, but should ideally be cleared and moved to an external stylesheet
+## deactivated default styles -- style is in css file now
+plugin.tx_frontend._CSS_DEFAULT_STYLE >
+
+# Responsive Table style in css file 
+lib.parseFunc_RTE.externalBlocks.table.stdWrap.wrap = <div class=.table-resp">|</div>
+
+styles.content.get = CONTENT
+styles.content.get {
+  table = tt_content
+  select.orderBy = sorting
+  select.where = colPos=0
+}
+#################################
+##  max width for each column  ##
+## Define the maximum image width of the content element type = images, 
+## for each content column separately
+tt_content.image.dataProcessing.20 {
+  maxGalleryW >
+  maxGalleryW.cObject = CASE
+  maxGalleryW.cObject {
+    key.field = colPos
+    ## main content
+    0 = CASE
+    0 {
+      key.data = pagelayout
+      pagets__standard = TEXT
+      pagets__standard.value = {$minimale_distribution.maxW}
+      pagets__2col = TEXT
+      pagets__2col.value = {$minimale_distribution.maxW50}
+      pagets__3col = TEXT
+      pagets__3col.value = {$minimale_distribution.maxW50}
+      default = TEXT
+      default.value = {$minimale_distribution.maxW}
+    }
+    ## full width of header image
+    1 = CASE
+    1 {
+      key.data = pagelayout
+      default = TEXT
+      default.value = {$minimale_distribution.maxW}
+    }
+    ## right column
+    2 < .0
+    2 {
+      pagets__standard.value = {$minimale_distribution.maxW50}
+    }
+    ## full width of content below
+    3 < .1
+
+    4 = TEXT
+    4.value = {$minimale_distribution.maxW50}
+
+    default = TEXT
+    default.value = {$minimale_distribution.maxW}
+
+  }
+
+  ## Define max image width of contentelements type=textWithImages,
+  ## for each content column separately
+  maxGalleryWInText >
+  maxGalleryWInText.cObject = CASE
+  maxGalleryWInText.cObject {
+    key.field = colPos
+    ## main content
+    0 = CASE
+    0 {
+      key.data = pagelayout
+      pagets__standard = TEXT
+      pagets__standard.value = {$minimale_distribution.maxWInText}
+      pagets__2col = TEXT
+      pagets__2col.value = {$minimale_distribution.maxWInText50}
+      pagets__3col = TEXT
+      pagets__3col.value = {$minimale_distribution.maxWInText50}
+      default = TEXT
+      default.value = {$minimale_distribution.maxWInText}
+    }
+    ## full width of header image
+    1 = CASE
+    1 {
+      key.data = pagelayout
+      default = TEXT
+      default.value = {$minimale_distribution.maxWInText}
+    }
+    ## right column
+    2 < .0
+    2 {
+      pagets__standard.value = {$minimale_distribution.maxWInText50}
+    }
+    ## full width of content below
+    3 < .1
+
+    4 = TEXT
+    4.value = {$minimale_distribution.maxWInText50}
+
+    default = TEXT
+    default.value = {$minimale_distribution.maxWInText}
+  }
+}
+########################
+##  Copy assignments  ##
+## You can easily copy assignments with the character "<".
+## It should be noted that for relative paths there is always a point "." in front of the object to be copied.
+tt_content.textpic.dataProcessing.20 < tt_content.image.dataProcessing.20
+tt_content.textmedia.dataProcessing.20 < tt_content.image.dataProcessing.20
+
+################
+##  Lightbox  ##
+## Attribut to click enlarge images
+## https://lokeshdhakar.com/projects/lightbox2/
+## If you use another lightbox script, you may have to adapt these settings
+lib.contentElement.settings.media.popup.linkParams.ATagParams.dataWrap = class="" data-lightbox="lightbox-{field:uid}"

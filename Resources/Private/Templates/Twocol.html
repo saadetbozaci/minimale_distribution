@@ -1,0 +1,28 @@
+<f:layout name="Standard" />
+
+<f:section name="Content">
+    <div class="main-content max-content-width">
+        <div class="grid">
+            <f:render partial="VerticalNavigation" arguments="{_all}" />
+
+            <div class="grid {f:if(condition:'{menuType}!=0', then: 'col-9-t-8-m-12', else: 'col-12')}">
+                <f:if condition="{content1}">
+                    <div class="col-12">
+                        <f:format.raw>{content1}</f:format.raw>
+                    </div>
+                </f:if>
+                <div class="col-6-m-12">
+                    <f:format.raw>{content0}</f:format.raw>
+                </div>
+                <div class="col-6-m-12">
+                    <f:format.raw>{content2}</f:format.raw>
+                </div>
+                <f:if condition="{content3}">
+                    <div class="col-12">
+                        <f:format.raw>{content3}</f:format.raw>
+                    </div>
+                </f:if>
+            </div>
+        </div>
+    </div>
+</f:section>
